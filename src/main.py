@@ -1,19 +1,13 @@
-n = int(input("Введите количество строк(n): "))
-m = int(input("Введите количество столбцов(m): "))
+from modules.input_module import input_matrix
+from modules.process_module import process_matrix
+from modules.output_module import output_matrix
 
-matrix = []
-print("Введите элементы матрицы построчно:")
+def main():
+    print("=== ЗАПУСК ИНТЕГРИРОВАННОЙ СИСТЕМЫ ===")
+    input_matrix()
+    process_matrix()
+    output_matrix()
+    print("\n=== РАБОТА ЗАВЕРШЕНА ===")
 
-for i in range(n):
-    row = []
-    for j in range(m):
-        value = float(input(f"Введите элемент [{i+1}][{j+1}]: "))
-        row.append(value)
-    matrix.append(row)
-
-print("Вывод матрицы по столбцам:")
-for j in range(m):
-    for i in range(n):
-        print(matrix[i][j], end=" ")
-    print()
-#Изменения для ветки develop
+if __name__ == "__main__":
+    main()
